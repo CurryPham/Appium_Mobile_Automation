@@ -20,6 +20,7 @@ public class LaunchApp {
             desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android");
             desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Appium");
             desiredCapabilities.setCapability(MobileCapabilityType.APP, "D:\\App\\Android.apk");
+            desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 120);
 
 
             // Set up the Appium server URL to connect to
