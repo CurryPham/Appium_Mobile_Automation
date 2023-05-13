@@ -1,7 +1,11 @@
 package test.apilearning;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.AppiumDriverEx;
 
 import java.util.List;
@@ -18,7 +22,10 @@ public class HandleMultipleMatchedElements {
         loginLabel.click();
 
         // Find elements those are matched  //*[@test="Login"]
-        Thread.sleep(2000);
+        WebDriverWait wait = new WebDriverWait(appiumDriver, 30L);
+        wait.until(ExpectedConditions.numberOfElementsToBe(MobileBy.xpath("//*[@test='Login']"), 2));
+
+
         List<MobileElement> loginElements = appiumDriver.findElementsByXPath("//*[@test='Login']");
         final int LOGIN_TEXT_FORM_INDEX = 0;
         final int LOGIN_MENU_FORM_INDEX = 1;
