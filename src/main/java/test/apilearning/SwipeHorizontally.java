@@ -12,17 +12,17 @@ import utils.AppiumDriverEx;
 
 import java.time.Duration;
 
-public class SwipeVertically {
+public class SwipeHorizontally {
     public static void main(String[] args) {
         // Set up the session
         AppiumDriver<MobileElement> appiumDriver = AppiumDriverEx.getAppiumDriver();
 
         // Go to Forms
-        appiumDriver.findElementByAccessibilityId("Forms").click();
+        appiumDriver.findElementByAccessibilityId("Swipe").click();
 
         // Make sure I'm on the targer screen
         WebDriverWait wait = new WebDriverWait(appiumDriver, 30L);
-        wait.until(ExpectedConditions.visibilityOf(appiumDriver.findElementByAccessibilityId("switch-text")));
+        wait.until(ExpectedConditions.visibilityOf(appiumDriver.findElementByXPath("//*[@text='Swipe horizontal']")));
 
         // Get the mobile screen sizes
         Dimension windowSize = appiumDriver.manage().window().getSize();
@@ -31,23 +31,24 @@ public class SwipeVertically {
 
         // Init start points and end points to touch and release
         int xStartPoint = 50 * screenWidth / 100;
-        int xEndPoint = xStartPoint;
-        int yStartPoint = 90 * screenHeight / 100;
-        int yEndPoint = 10 * screenHeight / 100;
+        int xEndPoint = 10 * screenWidth / 100;
+        int yStartPoint = 50 * screenHeight / 100;
+        int yEndPoint = yStartPoint;
 
         // Perform the touch action
         PointOption startPoint = new PointOption().withCoordinates(xStartPoint, yStartPoint);
         PointOption endPoint = new PointOption().withCoordinates(xEndPoint, yEndPoint);
 
-        // Scroll up
         TouchAction touchAction = new TouchAction(appiumDriver);
+
+        // Scroll right to left
         touchAction.press(startPoint)
                 .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
                 .moveTo(endPoint)
                 .release()
                 .perform();
 
-        // Scroll down
+        // Scroll left to left
         touchAction.press(endPoint)
                 .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
                 .moveTo(startPoint)
