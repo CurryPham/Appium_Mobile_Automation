@@ -8,7 +8,7 @@ public class setValues {
 
     public static void main(String[] args) {
         // 1. Launch the target app
-        AppiumDriver<MobileElement> appiumDriver = AppiumDriverEx.getAppiumDriver();
+        AppiumDriver<MobileElement> appiumDriver = AppiumDriverEx.getAndroidDriver();
 
         // 2. Click on Login Label
         MobileElement loginLabel = appiumDriver.findElementByAccessibilityId("Login");

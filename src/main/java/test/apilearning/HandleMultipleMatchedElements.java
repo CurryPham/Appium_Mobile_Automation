@@ -3,7 +3,6 @@ package test.apilearning;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.AppiumDriverEx;
@@ -15,7 +14,7 @@ public class HandleMultipleMatchedElements {
     public static void main(String[] args) throws InterruptedException {
 
         // Start the appium session
-        AppiumDriver<MobileElement> appiumDriver = AppiumDriverEx.getAppiumDriver();
+        AppiumDriver<MobileElement> appiumDriver = AppiumDriverEx.getAndroidDriver();
 
         // Click on Login Label
         MobileElement loginLabel = appiumDriver.findElementByAccessibilityId("Login");

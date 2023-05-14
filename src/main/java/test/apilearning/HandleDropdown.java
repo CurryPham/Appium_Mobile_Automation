@@ -8,7 +8,7 @@ public class HandleDropdown {
     public static void main(String[] args) {
 
         // Set up the session
-        AppiumDriver<MobileElement> appiumDriver = AppiumDriverEx.getAppiumDriver();
+        AppiumDriver<MobileElement> appiumDriver = AppiumDriverEx.getAndroidDriver();
 
         // Go to Forms
         MobileElement formLabel = appiumDriver.findElementByAccessibilityId("Forms");
