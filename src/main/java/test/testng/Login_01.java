@@ -5,7 +5,7 @@ import io.appium.java_client.MobileElement;
 import org.testng.annotations.Test;
 import utils.AppiumDriverEx;
 
-public class LoginPage {
+public class Login_01 {
 @Test
     public void loginWithCorrectCreds() {
         // 1. Launch the target app
