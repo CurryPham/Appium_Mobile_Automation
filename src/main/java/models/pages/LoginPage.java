@@ -20,13 +20,26 @@ public class LoginPage {
         return appiumDriver;
     }
 
+    public void inputUserName(String userNameText) {
+        this.username().sendKeys(userNameText);
+    }
+
     public MobileElement username() {
         return appiumDriver.findElement(usernameSelById);
     }
     public MobileElement password() {
         return appiumDriver.findElement(passwordSelById);
     }
+
+    public void inputPassWord(String passwordText) {
+        this.password().sendKeys(passwordText);
+    }
+
     public MobileElement loginBtn() {
         return appiumDriver.findElement(loginBtnSelById);
+    }
+
+    public void clickOnLoginBtn() {
+        this.loginBtn().click();
     }
 }
