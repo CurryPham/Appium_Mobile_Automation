@@ -1,11 +1,11 @@
-package test.apilearning;
+package test.pom;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import models.pages.LoginPage;
 import utils.AppiumDriverEx;
 
-public class setValuesByPOMMainInteractionMethod {
+public class setValuesByPOM {
 
     public static void main(String[] args) {
         // 1. Launch the target app
@@ -17,10 +17,10 @@ public class setValuesByPOMMainInteractionMethod {
 
         // 3. Enter username and password
         LoginPage loginPage = new LoginPage(appiumDriver);
-        loginPage.inputUserName("auto@gmail.com");
-        loginPage.inputPassWord("password");
+        loginPage.username().sendKeys("auto@gmail.com");
+        loginPage.password().sendKeys("password");
 
         // 4. Click on Login Button
-        loginPage.clickOnLoginBtn();
+        loginPage.loginBtn().click();
     }
 }
